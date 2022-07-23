@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	
+	<changeSet id="create_table_data" author="Andrei Dodu">
+		<createTable tableName="data" schemaName="${schemaName}">
+			<column name="cod_data" type="VARCHAR(255)">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_cod_data" />
+			</column>
+			<column name="str_field" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="NOW()" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="NOW()" />
+			<column name="version" type="INT" />
+		</createTable>
+	</changeSet>
+	
+	<changeSet id="insert_data_in_data" author="Andrei Dodu">  
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
+	        	<column  name="cod_data"  	     value="test0"/>
+	        	<column  name="str_field"  		 value="data test 0"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
+	        	<column  name="cod_data"  	     value="test1"/>
+	        	<column  name="str_field"  		 value="data test 1"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
+	        	<column  name="cod_data"  	     value="test2"/>
+	        	<column  name="str_field"  		 value="data test 2"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
+	        	<column  name="cod_data"  	     value="test3"/>
+	        	<column  name="str_field"  		 value="data test 3"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
+	        	<column  name="cod_data"  	     value="test4"/>
+	        	<column  name="str_field"  		 value="data test 4"/>
+	    </insert>	    	    	    
+
+	</changeSet>
+	
+</databaseChangeLog>

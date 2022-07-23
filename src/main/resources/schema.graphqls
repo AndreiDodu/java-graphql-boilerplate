@@ -1,0 +1,16 @@
+
+schema {
+    query: Query
+}
+
+#--------------------------------
+type Data {
+
+    id: String!
+    field: String!
+}
+#--------------------------------
+
+type Query {
+    getData(id: String!): Data
+}
