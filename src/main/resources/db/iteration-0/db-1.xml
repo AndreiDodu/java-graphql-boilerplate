@@ -10,10 +10,19 @@
 				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_cod_data" />
 			</column>
 			<column name="str_field" type="VARCHAR(255)"/>
-			<column name="insert_date" type="DATETIME" defaultValueComputed="NOW()" />
-			<column name="update_date" type="DATETIME" defaultValueComputed="NOW()" />
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimeStamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimeStamp}" />
 			<column name="version" type="INT" />
 		</createTable>
+		<createTable tableName="data_bis" schemaName="${schemaName}">
+			<column autoIncrement="${autoIncrement}" name="data_bis_id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"	primaryKeyName="pk_data_bis_seq" />
+			</column>
+			<column name="str_field" type="VARCHAR(255)"/>
+			<column name="insert_date" type="DATETIME" defaultValueComputed="${defaultTimeStamp}" />
+			<column name="update_date" type="DATETIME" defaultValueComputed="${defaultTimeStamp}" />
+			<column name="version" type="INT" />
+		</createTable>	
 	</changeSet>
 	
 	<changeSet id="insert_data_in_data" author="Andrei Dodu">  
@@ -36,6 +45,30 @@
 	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data">  
 	        	<column  name="cod_data"  	     value="test4"/>
 	        	<column  name="str_field"  		 value="data test 4"/>
+	    </insert>	    	    	    
+
+	</changeSet>
+	
+	<changeSet id="insert_data_in_data_bis" author="Andrei Dodu">  
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data_bis">  
+	        	<column  name="data_bis_id"  	     value="1"/>
+	        	<column  name="str_field"  		 value="data_bis test 0"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data_bis">  
+	        	<column  name="data_bis_id"  	     value="2"/>
+	        	<column  name="str_field"  		 value="data_bis test 1"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data_bis">  
+	        	<column  name="data_bis_id"  	     value="3"/>
+	        	<column  name="str_field"  		 value="data_bis test 2"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data_bis">  
+	        	<column  name="data_bis_id"  	     value="4"/>
+	        	<column  name="str_field"  		 value="data_bis test 3"/>
+	    </insert>
+	    <insert  catalogName="${schemaName}" dbms="${dbms}" schemaName="${schemaName}" tableName="data_bis">  
+	        	<column  name="data_bis_id"  	     value="5"/>
+	        	<column  name="str_field"  		 value="data_bis test 4"/>
 	    </insert>	    	    	    
 
 	</changeSet>

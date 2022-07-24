@@ -16,11 +16,11 @@ import com.andreidodu.boilerplate.service.DataService;
 public class DataServiceImpl implements DataService {
 
 	@Autowired
-	private DataDao domandaDao;
+	private DataDao dataDao;
 
 	@Override
 	public Data findById(String id) {
-		DataDB db = this.domandaDao.findById(id).get();
+		DataDB db = this.dataDao.findById(id).get();
 		return (new DozerBeanMapper()).map(db, Data.class);
 	}
 

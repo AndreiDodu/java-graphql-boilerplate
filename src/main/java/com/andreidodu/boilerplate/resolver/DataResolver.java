@@ -12,10 +12,10 @@ import graphql.kickstart.tools.GraphQLQueryResolver;
 public class DataResolver implements GraphQLQueryResolver {
 
 	@Autowired
-	private DataService domandaService;
+	private DataService dataService;
 
 	public Data getData(String id) {
-		return this.domandaService.findById(id);
+		return this.dataService.findById(id);
 	}
 
 }
