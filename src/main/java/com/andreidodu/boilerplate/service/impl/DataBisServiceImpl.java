@@ -3,6 +3,7 @@ package com.andreidodu.boilerplate.service.impl;
 import javax.transaction.Transactional;
 
 import org.dozer.DozerBeanMapper;
+import org.dozer.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,14 @@ public class DataBisServiceImpl implements DataBisService {
 
 	@Autowired
 	private DataBisDao dataBisDao;
+	
+	@Autowired
+	private Mapper mapper;
 
 	@Override
 	public DataBis findById(Long id) {
 		DataBisDB db = this.dataBisDao.findById(id).get();
-		return (new DozerBeanMapper()).map(db, DataBis.class);
+		return this.mapper.map(db, DataBis.class);
 	}
 
 }
